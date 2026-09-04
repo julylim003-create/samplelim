@@ -44,7 +44,7 @@ function HomeTab({ firstName, setActiveTab }) {
         </p>
         <h1 className="hero-title">
           WELCOME TO THE<br />
-          PICKLEBALL COURT CLUB!
+          PICKLEBALLIM COURT CLUB!
         </h1>
         <p className="description">
           Explore our games, book your next court, and connect with fellow players. You've officially joined the court!
