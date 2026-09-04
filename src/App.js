@@ -23,6 +23,12 @@ function App() {
     setIsRegistered(true);
   };
 
+  // Callback handler to reset state and go back to registration screen
+  const handleBackToRegister = () => {
+    setIsRegistered(false);
+    setActiveTab('home'); // Reset default tab view
+  };
+
   // Render Registration view until form is submitted
   if (!isRegistered) {
     return (
@@ -35,7 +41,11 @@ function App() {
   // Render main portal dashboard view after registration
   return (
     <div className="landing-page">
-      <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Navbar 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+        onBackToRegister={handleBackToRegister} 
+      />
 
       {/* Main Dynamic View Area */}
       <main className="hero-container">
@@ -45,7 +55,7 @@ function App() {
         {activeTab === 'games' && <GamesTab matches={UPCOMING_MATCHES} />}
         {activeTab === 'reservations' && <ReservationsTab courts={COURTS} />}
       </main>
-
+      
       <Footer />
     </div>
   );
